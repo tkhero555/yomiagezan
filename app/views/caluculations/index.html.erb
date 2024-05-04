@@ -1,0 +1,40 @@
+<div class="w-full md:w-1/2 mx-auto px-8 text-lg">
+  <div class="flex mx-auto"> 
+    <p><%= @question_number %>問目</p>
+  </div>
+  <div class="flex">
+    <%= image_tag 'keirou_obaachan_smile2.png', class: "w-1/3 object-contain" %>
+    <div class="w-2/3 flex items-center justify-center">
+      <div class="bg-white rounded-lg w-2/3 h-2/3 flex items-center justify-center relative text-4xl">
+        <% digit = @question_number %>
+        <% min = 10**(digit - 1) %>
+        <% max = (10**digit) - 1 %>
+        <div data-controller="issen">
+          <p data-issen-target="element0" class="element0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs">願いましては、</p>
+          <p data-issen-target="element1" class="element1 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number1 = rand(min..max) %></p>
+          <p data-issen-target="element2" class="element2 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number2 = rand(min..max) %></p>
+          <p data-issen-target="element3" class="element3 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number3 = rand(min..max) %></p>
+          <p data-issen-target="element4" class="element4 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number4 = rand(min..max) %></p>
+          <p data-issen-target="element5" class="element5 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number5 = rand(min..max) %></p>
+          <p data-issen-target="element6" class="element6 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number6 = rand(min..max) %></p>
+          <p data-issen-target="element7" class="element7 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number7 = rand(min..max) %></p>
+          <p data-issen-target="element8" class="element8 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number8 = rand(min..max) %></p>
+          <p data-issen-target="element9" class="element9 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number9 = rand(min..max) %></p>
+          <p data-issen-target="element10" class="element10 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-1000"><%= number10 = rand(min..max) %></p>
+          <p data-issen-target="element11" class="element11 invisible absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg">では</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex"> 
+    <% sum = number1 + number2 + number3 + number4 + number5 + number6 + number7 + number8 + number9 + number10 %>
+    <% question_number = @question_number + 1 %>
+    <%= form_with url: caluculation_path do |f| %>
+      <%= f.text_field :answer %>
+      <%= f.hidden_field :correct, value: sum %>
+      <%= f.hidden_field :question_number, value: question_number %>
+      <%= f.submit '回答する', class:"btn btn-primary" %>
+      <p>※半角数字のみ</p>
+    <% end %>
+  </div>
+</div>
