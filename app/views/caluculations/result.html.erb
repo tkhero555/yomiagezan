@@ -11,6 +11,6 @@
   </div>
   <p>正解数は<%= @question_number -2 %>問でした。</p>
   <%= link_to 'タイトルに戻る', root_path, class: 'btn' %>
-  <%= link_to 'Xでシェア', "https://twitter.com/intent/tweet?url=#{request.url}&text=正解数#{@question_number -2}問のあなたは#{@result_level}です。&hashtags=テキスト読み上げ算", data: { show_count: false }, title: 'Twitter', target: '_blank', rel: "noopener noreferrer", class: "btn btn-neutral" %>
+  <%= link_to 'Xでシェア', "https://twitter.com/intent/tweet?url=https://yomiagezan-d72ed4f0648b.herokuapp.com/&text=正解数#{@question_number -2}問のあなたは#{@result_level}です。&hashtags=テキスト読み上げ算", data: { show_count: false }, title: 'Twitter', target: '_blank', rel: "noopener noreferrer", class: "btn btn-neutral" %>
 </div>
 
