@@ -1,0 +1,16 @@
+<div class="w-full md:w-1/2 mx-auto px-8 text-lg">
+  <div class="flex mx-auto"> 
+  </div>
+  <div class="flex">
+    <%= image_tag 'keirou_obaachan_smile2.png', class: "w-1/3 object-contain" %>
+    <div class="w-2/3 flex items-center justify-center">
+      <div class="bg-white rounded-lg w-2/3 h-2/3 flex items-center justify-center relative text-4xl">
+        <p><%= @result_level %></p>
+      </div>
+    </div>
+  </div>
+  <p>正解数は<%= @question_number -2 %>問でした。</p>
+  <%= link_to 'タイトルに戻る', root_path, class: 'btn' %>
+  <%= link_to 'Xでシェア', "https://twitter.com/intent/tweet?url=#{request.url}&text=正解数#{@question_number -2}問のあなたは#{@result_level}です。&hashtags=テキスト読み上げ算", data: { show_count: false }, title: 'Twitter', target: '_blank', rel: "noopener noreferrer", class: "btn btn-neutral" %>
+</div>
+
