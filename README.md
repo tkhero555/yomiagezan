@@ -1,24 +1,12 @@
-# README
+# 概要
+スクールコミュニティ内で開催されたミニアプリを作成するイベントに応募したアプリです。
+イベントテーマは「こどもごころ」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+そろばんをテーマにした読み上げ算ゲームアプリです。
+数字が10個、順番に表示されるのでその合計を答える内容です。
+正解する度に表示される数字の桁数が無限に増えていきます。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 個人的な制作テーマ
+- javascriptを書いて画面に動きをつける。
+- 環境構築〜動作確認までをとにかく早く実装する。
+- Railsの仕組みの理解を深めることを意識する。
